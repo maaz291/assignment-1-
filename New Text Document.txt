@@ -1,0 +1,35 @@
+#include &lt;iostream&gt;
+using namespace std;
+int main(){
+
+//creating a variable to store the number of elements in the array
+int num = 0;
+//asking the user to enter the number of elements in the array
+cout&lt;&lt;&quot;Enter the total number of numbers in the array:- &quot;;
+cin&gt;&gt;num;
+//creating an array to store the elements of the array
+int array[num];
+//asking the user to enter the elements of the array
+cout&lt;&lt;&quot;Enter the numbers in the array: - &quot;;
+for(int p = 0;p &lt; num;p++){
+cin&gt;&gt;array[p];
+}
+//creating a variable to store the target element
+int target = 0;
+//asking the user to enter the target element
+cout&lt;&lt;&quot;Enter the target element:- &quot;;
+cin&gt;&gt;target;
+//iterating through the array
+for(int q = 0;q &lt; num;q++){
+for(int r = q+1;r &lt; num;r++){
+
+//checking if the sum of elements at two indices is equal to the target element or not
+if(array[j] + array[k] == target){
+//printing the indices of the two elements if their sum equals the target element
+cout&lt;&lt;&quot;[&quot;&lt;&lt;q&lt;&lt;&quot;, &quot;&lt;&lt;r&lt;&lt;&quot;]&quot;&lt;&lt;endl;
+break;
+}
+}
+}
+return 0;
+}
