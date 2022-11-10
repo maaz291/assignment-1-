@@ -1,0 +1,38 @@
+int main()
+{
+    int sparseMatrix[4][5] =
+    {
+        {0 , 0 , 3 , 0 , 4 },
+        {0 , 0 , 5 , 7 , 0 },
+        {0 , 0 , 0 , 0 , 0 },
+        {0 , 2 , 6 , 0 , 0 }
+    };
+ 
+    int size = 0;
+    for (int p = 0; p < 4; p++)
+        for (int q = 0; q < 5; q++)
+            if (sparseMatrix[p][q]!= 0)
+                size++;
+    int compactMatrix[3][size];
+ 
+    int r = 0;
+    for (int p = 0; p<4; p++)
+        for (int q= 0; q<5; q++)
+            if (sparseMatrix[p][q]!= 0)
+            {
+                compactMatrix[0][r] = p;
+                compactMatrix[1][r] = q;
+                compactMatrix[2][r] = sparseMatrix[p][q];
+                r++;
+            }
+ 
+    for (int p=0; p<3; p++)
+    {
+
+        for (int q=0; q<size; q++)
+            cout <<" "<<compactMatrix[p][q];
+ 
+        cout<<"\n";
+    }
+    return 0;
+}
