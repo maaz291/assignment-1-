@@ -1,0 +1,35 @@
+#include <iostream>
+ 
+using namespace std;
+ 
+string X, Y;
+ 
+int lcs(int m, int n, int count)
+{
+ 
+    if (m == 0 || n == 0)
+        return count;
+ 
+    if (X[m - 1] == Y[n - 1]) {
+        count = lcs(m - 1, n - 1, count + 1);
+    }
+    count = max(count,
+                max(lcs(m, n - 1, 0),
+                    lcs(m - 1, n, 0)));
+    return count;
+}
+ 
+int main()
+{
+    int n, m;
+ 
+    X = "ABAB";
+    Y = "BABA";
+ 
+    n = X.size();
+    m = Y.size();
+ 
+    cout << lcs(n, m, 0);
+ 
+    return 0;
+}
